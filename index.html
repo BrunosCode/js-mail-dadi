@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- /GOOGLE FONTS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="h-overlay c-login">
+            <label for="user-email">Insert Email<input id="user-email" name="user-email" type="text"></label>
+            <span id="email-error"></span>
+            <button id="login" class="c-btn">Login</button>
+            <button id="close" class="c-link">Without email</button>
+        </div>
+
+        <div class="c-userDashboard">
+            <h3>You won <span id="user-points"></span> match</h3>
+            <h5>Your dice score: <span id="user-score"></span></h5>
+        </div>
+        <div class="c-gameDashboard">
+            <h1 id="match-winner"></h1>
+            <button id="start-game" class="c-btn">Start Game</button>
+        </div>
+        <div class="c-computerDashboard">
+            <h3>Computer won <span id="user-points"></span> match</h3>
+            <h5>Computer dice score: <span id="computer-score"></span></h5>
+        </div>
+    </main>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
