@@ -14,15 +14,15 @@
 </head>
 <body>
     <main>
-        <div class="h-overlay c-login">
-            <label for="user-email">Insert Email<input id="user-email" name="user-email" type="text"></label>
+        <div id="login-overlay" class="h-overlay c-login">
+            <label for="user-email">Insert Email<input id="user-email" name="user-email" type="email"></label>
             <span id="email-error"></span>
             <button id="login" class="c-btn">Login</button>
             <button id="close" class="c-link">Without email</button>
         </div>
 
         <div class="c-userDashboard">
-            <h3>You won <span id="user-points"></span> match</h3>
+            <h3>Your points <span id="user-points"></span></h3>
             <h5>Your dice score: <span id="user-score"></span></h5>
         </div>
         <div class="c-gameDashboard">
@@ -30,7 +30,7 @@
             <button id="start-game" class="c-btn">Start Game</button>
         </div>
         <div class="c-computerDashboard">
-            <h3>Computer won <span id="user-points"></span> match</h3>
+            <h3>Computer points <span id="user-points"></span></h3>
             <h5>Computer dice score: <span id="computer-score"></span></h5>
         </div>
     </main>
