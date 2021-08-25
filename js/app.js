@@ -4,7 +4,7 @@ const emailsList = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", 
 // store user email
 let userEmail = document.getElementById("user-email").value;
 // check if the email is in the list
-const checkEmailsList = () => {
+const checkEmailsList = function() {
     for (let i = 0; i < emailsList.length; i++) {
         // if true close popup
         if (userEmail == emailsList[i]) {
@@ -25,7 +25,7 @@ document.getElementById('close').addEventListener('click', () => {
 // DICE GAME
 let userPoints = 0;
 let computerPoints = 0;
-const diceGame = () => {
+const diceGame = function() {
     // generate user number
     let userNumber = Math.floor(Math.random() * 6) + 1;
     console.log(userNumber)
