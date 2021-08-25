@@ -9,49 +9,93 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background-color: black;
-}
-
-.container {
-    flex-grow: 1;
-    background-color: aliceblue;
-    margin: .5rem;
-    padding: 1rem;
-    border-radius: 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    position: relative;
-}
-
-.c-login {
+/* LAYOUT */
+/* Overlay */
+.l-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
 }
-.h-overlay {
-    position: absolute;
-    background: rgba(0, 0, 0, .8);
-    width: 100vw;
-    height: 100vh;
-    z-index: 1;
+.l-overlay--close {
+    display: none;
 }
 
-.close {
-    display: none;
+/* three columns grid */
+.l-grid {
+    flex-grow: 1;
+    background-color: black;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.l-grid__col {
+    text-align: center;
+}
+
+/* COMPONETS */
+/* Commons */
+.c-btn {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: black;
+    color: aliceblue;
+}
+.c-link {
+    color: gray;
+    border: none;
+    background-color: transparent;
+}
+
+ /* Login form */
+ .c-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    width: 400px;
+    padding: 2rem;
+    border-radius: 2rem;
+}
+.c-login__btns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    margin-top: .5rem;
+}
+.c-login__warning {
+    color: red;
+    line-height: 2rem;
+    margin-bottom: 0;
+}
+.c-login__label {
+    font-weight: 700;
+}
+.c-login__input {
+    margin-left: 1rem;
+}
+
+/* Dashboards */
+.c-dashboard {
+    background-color: aliceblue;
+    padding: .5rem;
+    border-radius: 2rem;
+}
+.c-dashboard > * {
+    margin: .5rem 0;
+}
+.c-dashboard span {
+    color: red;
+    font-weight: 900;
 }

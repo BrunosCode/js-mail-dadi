@@ -14,25 +14,26 @@
 </head>
 <body>
     <main>
-        <div class="container">
-            <div class="h-overlay">
-                <div id="login-overlay" class="c-login">
-                    <label for="user-email">Insert Email <input id="user-email" name="user-email" type="email"></label>
-                    <span id="email-error"></span>
-                    <button id="login" class="c-btn">Login</button>
-                    <button id="close" class="c-link">Without email</button>
+        <div id="login-overlay" class="l-overlay">
+            <div class="c-login">
+                <label class="c-login__label" for="user-email">Insert Email <input id="user-email" class="c-login__input" name="user-email" type="email"></label>
+                <span id="email-error" class="c-login__warning"></span>
+                <div class="c-login__btns">
+                    <button id="login" class="c-btn c-login__element">Login</button>
+                    <button id="close" class="c-link c-login__element">Without email</button>
                 </div>
             </div>
-    
-            <div class="c-userDashboard">
+        </div>
+        <div class="l-grid">
+            <div class="l-grid__col c-dashboard">
                 <h3>You have won <span id="user-points">0</span> games</h3>
                 <h5>Your dice score: <span id="user-number"></span></h5>
             </div>
-            <div class="c-gameDashboard">
+            <div class="l-grid__col c-dashboard">
                 <h1 id="match-winner"></h1>
                 <button id="start-game" class="c-btn">Start Game</button>
             </div>
-            <div class="c-computerDashboard">
+            <div class="l-grid__col c-dashboard">
                 <h3>Computer has won <span id="computer-points">0</span> games</h3>
                 <h5>Computer dice score: <span id="computer-number"></span></h5>
             </div>

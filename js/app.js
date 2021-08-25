@@ -2,7 +2,7 @@
 // Create email list
 const emailsList = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", "email4@gmail.com", "email5@gmail.com"];
 // check if the email is in the list
-const checkEmailsList = function() {
+const checkEmailsList = () => {
     for (let i = 0; i < emailsList.length; i++) {
         // store user email
         let userEmail = document.getElementById("user-email").value;
@@ -19,13 +19,13 @@ const checkEmailsList = function() {
 document.getElementById('login').addEventListener('click', checkEmailsList);
 // close overlay without email
 document.getElementById('close').addEventListener('click', () => {
-    document.getElementById("login-overlay").classList.add("close");
+    document.getElementById("login-overlay").classList.add("l-overlay--close");
 });
 
 // DICE GAME
 let userPoints = 0;
 let computerPoints = 0;
-const diceGame = function() {
+const diceGame = () => {
     // generate user number
     let userNumber = Math.floor(Math.random() * 6) + 1;
     console.log(userNumber)
