@@ -1,11 +1,11 @@
 // CHECK EMAIL LIST 
 // Create email list
 const emailsList = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", "email4@gmail.com", "email5@gmail.com"];
-// store user email
-let userEmail = document.getElementById("user-email").value;
 // check if the email is in the list
 const checkEmailsList = function() {
     for (let i = 0; i < emailsList.length; i++) {
+        // store user email
+        let userEmail = document.getElementById("user-email").value;
         // if true close popup
         if (userEmail == emailsList[i]) {
             document.getElementById("login-overlay").classList.add("close");
