@@ -23,49 +23,53 @@ document.getElementById('close').addEventListener('click', () => {
 });
 
 // DICE GAME
-let userPoints = 0;
-let computerPoints = 0;
+let gamesCounter = 0;
+let userCounter = 0;
+let computerCounter = 0;
 const diceGame = () => {
+    // update games counter
+    gamesCounter++
+    document.getElementById("games-counter").innerHTML = gamesCounter;
     // generate user number
-    let userNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(userNumber)
+    let userScore = Math.floor(Math.random() * 6) + 1;
+    console.log(userScore)
     // generate computer number
-    let computerNumber = Math.floor(Math.random() * 6) + 1;
-    console.log(computerNumber)
+    let computerScore = Math.floor(Math.random() * 6) + 1;
+    console.log(computerScore)
+    // cheat
+    if (gamesCounter > 10 && userScore > computerScore) {
+        // generate user number
+        userScore = Math.floor(Math.random() * 6) + 1;
+        console.log("cheated " + userScore)
+        // generate computer number
+        computerScore = Math.floor(Math.random() * 6) + 1;
+        console.log("cheated " + computerScore)
+    }
+    // print dice score 
+    document.getElementById("user-score").innerHTML = userScore;
+        document.getElementById("computer-score").innerHTML = computerScore;
     // check who has won
-    if (userNumber == computerNumber) {
-        // insert user score
-        document.getElementById("user-number").innerHTML = userNumber;
-        // insert computer score
-        document.getElementById("computer-number").innerHTML = computerNumber;
-        // insert games result
+    // tie
+    if (userScore == computerScore) {
         document.getElementById("match-winner").innerHTML = "Tie";
         // update user points
-        userPoints++
-        document.getElementById("user-points").innerHTML = userPoints;
+        userCounter++
+        document.getElementById("user-counter").innerHTML = userCounter;
         // update computer points
-        computerPoints++
-        document.getElementById("computer-points").innerHTML = computerPoints;
-    } else if (userNumber < computerNumber) {
-        // insert user score
-        document.getElementById("user-number").innerHTML = userNumber;
-        // insert computer score
-        document.getElementById("computer-number").innerHTML = computerNumber;
-        // insert games result
+        computerCounter++
+        document.getElementById("computer-counter").innerHTML = computerCounter;
+    // Computer win
+    } else if (userScore < computerScore) {
         document.getElementById("match-winner").innerHTML = "Computer Won";
         // update computer points
-        computerPoints++
-        document.getElementById("computer-points").innerHTML = computerPoints;
-    } else if (userNumber > computerNumber) {
-        // insert user score
-        document.getElementById("user-number").innerHTML = userNumber;
-        // insert computer score
-        document.getElementById("computer-number").innerHTML = computerNumber;
-        // insert games result
+        computerCounter++
+        document.getElementById("computer-counter").innerHTML = computerCounter;
+    // User win
+    } else if (userScore > computerScore) {
         document.getElementById("match-winner").innerHTML = "You Won";
         // update user points
-        userPoints++
-        document.getElementById("user-points").innerHTML = userPoints;
+        userCounter++
+        document.getElementById("user-counter").innerHTML = userCounter;
     }
 }
 
