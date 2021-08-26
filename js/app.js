@@ -3,17 +3,21 @@
 const emailsList = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", "email4@gmail.com", "email5@gmail.com"];
 // check if the email is in the list
 const checkEmailsList = () => {
+    let bool = false;
     for (let i = 0; i < emailsList.length; i++) {
         // store user email
         let userEmail = document.getElementById("user-email").value;
-        // if true close popup
         if (userEmail == emailsList[i]) {
-            document.getElementById("login-overlay").classList.add("l-overlay--close");
-            return;
+            bool = true;
         }
     }
+    // if true close popup
+    if (bool === true) {
+        document.getElementById("login-overlay").classList.add("l-overlay--close");
     // else return error
-    document.getElementById("email-error").innerHTML = "Unknown Email";
+    } else {
+        document.getElementById("email-error").innerHTML = "Unknown Email";
+    }
 }
 // add event listener to check the list
 document.getElementById('login').addEventListener('click', checkEmailsList);
