@@ -3,16 +3,16 @@
 const emailsList = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", "email4@gmail.com", "email5@gmail.com"];
 // check if the email is in the list
 const checkEmailsList = () => {
-    let bool = false;
+    let emailFound = false;
     for (let i = 0; i < emailsList.length; i++) {
         // store user email
         let userEmail = document.getElementById("user-email").value;
         if (userEmail == emailsList[i]) {
-            bool = true;
+            emailFound = true;
         }
     }
     // if true close popup
-    if ( bool ) {
+    if ( emailFound ) {
         document.getElementById("login-overlay").classList.add("l-overlay--close");
     // else return error
     } else {

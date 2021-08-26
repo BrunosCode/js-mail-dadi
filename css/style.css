@@ -73,11 +73,19 @@ body {
     color: aliceblue;
     cursor: pointer;
 }
+.c-btn:hover,
+.c-btn:focus {
+    color: yellow;
+    transform: scale(.9);
+}
 .c-link {
     color: gray;
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+.c-link:hover,
+.c-link:focus {
     text-decoration: underline solid gray;
 }
 
