@@ -45,6 +45,11 @@ body {
         row-gap: 1rem;
     }
 }
+@media screen and (max-width: 500px) {
+    .l-grid {
+        padding-bottom: 60px;
+    }
+}
 .l-grid__col {
     display: flex;
     flex-direction: column;
@@ -135,6 +140,23 @@ body {
     color: white;
 }
 
+.c-playBtn {
+    font-weight: 900;
+    font-size: 1.125rem;
+}
+@media screen and (max-width: 500px) {
+    .c-playBtn {
+        position: fixed;
+        bottom: 0;
+        left: 2.5%;
+        width: 95%;
+        margin: 0;
+        padding-bottom: .75rem;
+        background-color: whitesmoke;
+        color: black;
+        border-radius: 1rem;
+    }
+}
 /* Dice */
 .c-dice {
     width: 100px;
