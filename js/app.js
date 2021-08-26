@@ -12,7 +12,7 @@ const checkEmailsList = () => {
         }
     }
     // if true close popup
-    if (bool === true) {
+    if ( bool ) {
         document.getElementById("login-overlay").classList.add("l-overlay--close");
     // else return error
     } else {
@@ -31,7 +31,7 @@ let gamesCounter = 0;
 let userCounter = 0;
 let computerCounter = 0;
 const diceGame = () => {
-    // update games counter
+    // update game counter
     gamesCounter++
     document.getElementById("games-counter").innerHTML = gamesCounter;
     // generate user number
@@ -40,7 +40,7 @@ const diceGame = () => {
     // generate computer number
     let computerScore = Math.floor(Math.random() * 6) + 1;
     console.log(computerScore)
-    // cheat
+    // ----  cheat  -----
     if (gamesCounter > 10 && userScore > computerScore) {
         // generate user number
         userScore = Math.floor(Math.random() * 6) + 1;
@@ -55,7 +55,7 @@ const diceGame = () => {
     document.getElementById("computer-score").innerHTML = computerScore;
     document.getElementById("computer-dice").setAttribute("data-number", computerScore)
     // check who has won
-    // tie
+    // Tie
     if (userScore == computerScore) {
         console.log("tie")
         document.getElementById("match-winner").innerHTML = "Tie";

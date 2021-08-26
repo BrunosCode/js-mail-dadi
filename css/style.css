@@ -141,8 +141,9 @@ body {
 }
 
 .c-playBtn {
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1.125rem;
+    text-transform: uppercase;
 }
 @media screen and (max-width: 500px) {
     .c-playBtn {
