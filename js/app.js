@@ -45,12 +45,15 @@ const diceGame = () => {
         computerScore = Math.floor(Math.random() * 6) + 1;
         console.log("cheated " + computerScore)
     }
-    // print dice score 
+    // print and display dice score 
     document.getElementById("user-score").innerHTML = userScore;
-        document.getElementById("computer-score").innerHTML = computerScore;
+    document.getElementById("user-dice").setAttribute("data-number", userScore)
+    document.getElementById("computer-score").innerHTML = computerScore;
+    document.getElementById("computer-dice").setAttribute("data-number", computerScore)
     // check who has won
     // tie
     if (userScore == computerScore) {
+        console.log("tie")
         document.getElementById("match-winner").innerHTML = "Tie";
         // update user points
         userCounter++
@@ -60,12 +63,14 @@ const diceGame = () => {
         document.getElementById("computer-counter").innerHTML = computerCounter;
     // Computer win
     } else if (userScore < computerScore) {
+        console.log("computer win")
         document.getElementById("match-winner").innerHTML = "Computer Won";
         // update computer points
         computerCounter++
         document.getElementById("computer-counter").innerHTML = computerCounter;
     // User win
     } else if (userScore > computerScore) {
+        console.log("user win")
         document.getElementById("match-winner").innerHTML = "You Won";
         // update user points
         userCounter++

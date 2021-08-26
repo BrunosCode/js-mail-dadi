@@ -30,7 +30,7 @@ body {
 .l-grid {
     flex-grow: 1;
     background-color: black;
-    padding: 1rem;
+    padding: .5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 1rem;
@@ -38,8 +38,24 @@ body {
     width: 100vw;
     height: 100vh;
 }
+@media screen and (max-width: 900px) {
+    .l-grid {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        row-gap: 1rem;
+    }
+}
 .l-grid__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     text-align: center;
+}
+.l-grid__row {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 /* COMPONETS */
@@ -50,11 +66,14 @@ body {
     border-radius: 1rem;
     background-color: black;
     color: aliceblue;
+    cursor: pointer;
 }
 .c-link {
     color: gray;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    text-decoration: underline solid gray;
 }
 
  /* Login form */
@@ -68,6 +87,11 @@ body {
     padding: 2rem;
     border-radius: 2rem;
 }
+@media screen and (max-width: 900px) {
+    .c-login {
+        width: unset;
+    }
+}
 .c-login__btns {
     display: flex;
     justify-content: space-evenly;
@@ -75,7 +99,8 @@ body {
     margin-top: .5rem;
 }
 .c-login__warning {
-    color: red;
+    color: #800000;
+    font-weight: 900;
     line-height: 2rem;
     margin-bottom: 0;
 }
@@ -88,7 +113,7 @@ body {
 
 /* Dashboards */
 .c-dashboard {
-    background-color: aliceblue;
+    background-color: #009900;
     padding: .5rem;
     border-radius: 2rem;
 }
@@ -96,6 +121,126 @@ body {
     margin: .5rem 0;
 }
 .c-dashboard span {
-    color: red;
+    color: black;
     font-weight: 900;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    vertical-align: middle;
+}
+.c-dashboard h1 {
+    color: white;
+}
+
+/* Dice */
+.c-dice {
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: white;
+    border: solid 1px black;
+}
+
+/* Dices points  */
+.c-dice__point {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.c-dice__point:nth-child(1) {
+    grid-area: p1;
+}
+.c-dice__point:nth-child(2) {
+    grid-area: p2;
+}
+.c-dice__point:nth-child(3) {
+    grid-area: p3;
+}
+.c-dice__point:nth-child(4) {
+    grid-area: p4;
+}
+.c-dice__point:nth-child(5) {
+    grid-area: p5;
+}
+.c-dice__point:nth-child(6) {
+    grid-area: p6;
+}
+.c-dice__point::after {
+    content: "";
+    display: block;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+/* Different dices layout */
+[data-number="1"] {
+    grid-template-areas: 
+    ". ."
+    "p1 p1"
+    ". .";
+}
+[data-number="1"] > .c-dice__point:nth-child(2),
+[data-number="1"] > .c-dice__point:nth-child(3),
+[data-number="1"] > .c-dice__point:nth-child(4),
+[data-number="1"] > .c-dice__point:nth-child(5),
+[data-number="1"] > .c-dice__point:nth-child(6) {
+    display: none;
+}
+[data-number="2"] {
+    grid-template-areas: 
+    "p1 ."
+    ". ."
+    ". p2";
+}
+[data-number="2"] > .c-dice__point:nth-child(3),
+[data-number="2"] > .c-dice__point:nth-child(4),
+[data-number="2"] > .c-dice__point:nth-child(5),
+[data-number="2"] > .c-dice__point:nth-child(6) {
+    display: none;
+}
+[data-number="3"] {
+    grid-template-areas: 
+    "p1 ."
+    "p3 p3"
+    ". p2";
+}
+[data-number="3"] > .c-dice__point:nth-child(4),
+[data-number="3"] > .c-dice__point:nth-child(5),
+[data-number="3"] > .c-dice__point:nth-child(6) {
+    display: none;
+}
+[data-number="4"] {
+    grid-template-areas: 
+    "p1 p2"
+    ". ."
+    "p3 p4";
+}
+[data-number="4"] > .c-dice__point:nth-child(5),
+[data-number="4"] > .c-dice__point:nth-child(6) {
+    display: none;
+}
+[data-number="5"] {
+    grid-template-areas: 
+    "p1 p2"
+    "p5 p5"
+    "p3 p4";
+}
+[data-number="5"] > .c-dice__point:nth-child(6) {
+    display: none;
+}
+[data-number="6"] {
+    grid-template-areas: 
+    "p1 p2"
+    "p3 p4"
+    "p5 p6";
 }
