@@ -8,7 +8,7 @@ const checkEmailsList = () => {
         let userEmail = document.getElementById("user-email").value;
         // if true close popup
         if (userEmail == emailsList[i]) {
-            document.getElementById("login-overlay").classList.add("close");
+            document.getElementById("login-overlay").classList.add("l-overlay--close");
             return;
         }
     }

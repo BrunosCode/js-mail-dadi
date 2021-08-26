@@ -133,11 +133,11 @@ body {
     height: 2rem;
     line-height: 2rem;
     border-radius: 50%;
-    background-color: white;
+    background-color: aliceblue;
     vertical-align: middle;
 }
 .c-dashboard h1 {
-    color: white;
+    color: aliceblue;
 }
 
 .c-playBtn {
@@ -152,7 +152,7 @@ body {
         width: 95%;
         margin: 0;
         padding-bottom: .75rem;
-        background-color: whitesmoke;
+        background-color: aliceblue;
         color: black;
         border-radius: 1rem;
     }
